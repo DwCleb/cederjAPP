@@ -1,0 +1,147 @@
+/**
+ * Main menu
+ *
+ * @author: Cleber
+ */
+
+import React, { Component } from 'react';
+import {
+  Text,
+  View,
+  ScrollView,
+  Platform,
+} from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as UserActions } from 'store/ducks/user';
+import styles from './styles';
+import Tooltip from 'react-native-dw-tooltip';
+import Icon from 'react-native-vector-icons/Ionicons';
+import SubjectList from 'components/SubjectList';
+import { colors, metrics } from 'themes';
+import PageHeader from '../../components/PageHeader';
+
+const subjectList = [
+  {
+    title: 'FAC',
+    grade: 80,
+    status: 'recovery',
+  },
+  {
+    title: 'POO',
+    grade: 60,
+    status: 'aproved',
+  },
+  {
+    title: 'Modelagem da informação',
+    grade: 75,
+    status: 'reproved',
+  },
+  {
+    title: 'Álgebra Linear',
+    grade: 55,
+    status: 'open',
+  },
+  {
+    title: 'FAC',
+    grade: 80,
+    status: 'recovery',
+  },
+  {
+    title: 'POO',
+    grade: 60,
+    status: 'aproved',
+  },
+  {
+    title: 'Modelagem da informação',
+    grade: 75,
+    status: 'reproved',
+  },
+  {
+    title: 'Álgebra Linear',
+    grade: 55,
+    status: 'open',
+  },
+  {
+    title: 'FAC',
+    grade: 80,
+    status: 'recovery',
+  },
+  {
+    title: 'POO',
+    grade: 60,
+    status: 'aproved',
+  },
+  {
+    title: 'Modelagem da informação',
+    grade: 75,
+    status: 'reproved',
+  },
+  {
+    title: 'Álgebra Linear',
+    grade: 55,
+    status: 'open',
+  },
+  {
+    title: 'FAC',
+    grade: 80,
+    status: 'recovery',
+  },
+  {
+    title: 'POO',
+    grade: 60,
+    status: 'aproved',
+  },
+  {
+    title: 'Modelagem da informação',
+    grade: 75,
+    status: 'reproved',
+  },
+  {
+    title: 'Álgebra Linear',
+    grade: 55,
+    status: 'open',
+  },
+];
+
+class Home extends Component {
+  static navigationOptions = {
+    title: 'Início',
+    tabBarIcon: ({ tintColor }) => <Icon name={(Platform.OS === 'ios') ? 'ios-home' : 'md-home'} size={28} color={tintColor} />,
+  }
+
+  static propTypes = {
+    user: PropTypes.object.isRequired,
+    signOut: PropTypes.func.isRequired,
+  }
+
+  render() {
+    const {
+      user,
+    } = this.props;
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.helloContainer}>
+          <Text style={styles.helloText}>Olá, Cleber!</Text>
+        </View>
+        <PageHeader
+          title="Disciplinas"
+          label={'Aqui é a lista das disciplinas que você se cadastrou.\nEntenda as cores dos cartões:\nAzul - Falta notas para fechar o semestre.\nLaranha - Você está na AP3.\nVerde - Você está provado.\nVermelho - Você está reprovado.'}
+        />
+        <SubjectList data={subjectList} />
+      </SafeAreaView>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  ...UserActions,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
