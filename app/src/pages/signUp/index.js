@@ -18,9 +18,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as UserActions } from 'store/ducks/user';
-import { TextInputMask } from 'react-native-masked-text';
-import ModalDropdown from 'react-native-modal-dropdown';
-import { StackActions, NavigationActions } from 'react-navigation';
+import InputText from 'components/InputText';
+import Button from 'components/Button';
 import Utils from 'utils/utils';
 import styles from './styles';
 
@@ -41,15 +40,15 @@ class SignUp extends Component {
     name: '',
     email: '',
     login: '',
-    cities: [],
-    states: [],
+    password: '',
+    branch: [],
+    course: [],
     cityId: '',
     stateId: '',
     message: null,
     loading: false,
     areaCode: '',
     profileId: 0,
-    password: '',
     telephone: '',
     errorMessage: null,
     // Facebook data
@@ -87,9 +86,9 @@ class SignUp extends Component {
       name,
       email,
       login,
-      areaCode,
       password,
-      telephone,
+      branch,
+      course,
     } = this.state;
 
     this.setState({ login: email });
@@ -213,7 +212,8 @@ class SignUp extends Component {
     const {
       name,
       email,
-      cities,
+      branch,
+      course,
       password,
       errorMessage,
     } = this.state;
@@ -226,60 +226,60 @@ class SignUp extends Component {
         }
         { !!user.message && this.showSMessage() }
         {/* { user.createLogin && this.signIn() } */}
-        <View>
+        <View style={styles.form}>
           {/* campo do nome completo */}
-          <Text style={styles.inputTitle}> Nome Completo </Text>
-          <TextInput
-            style={styles.input}
+          <InputText
+            title="Nome completo"
+            placeholder="Nome"
             value={name}
-            name="name"
-            placeholder="José da Silva Almeida"
-            autoCorrect={false}
             onChangeText={name => this.setState({ name })}
-            autoCapitalize="none"
-            underlineColorAndroid="transparent"
+            tooltip="Seu nome completo, ou nome e sobrenome."
           />
-          {/* campo de E-mail */}
-          <Text style={styles.inputTitle}> E-mail </Text>
-          <TextInput
-            style={styles.input}
-            value={email}
+          <InputText
+            title="E-mail"
+            keyboardType="email-address"
             placeholder="E-mail"
-            autoCorrect={false}
+            value={email}
             onChangeText={email => this.setState({ email })}
-            autoCapitalize="none"
-            underlineColorAndroid="transparent"
+            tooltip="Seu endereço de e-mail, válido."
           />
-          {/* campo da senha */}
-          <Text style={styles.inputTitle}> Senha </Text>
-          <TextInput
-            style={styles.input}
-            value={password}
-            placeholder="Senha"
-            autoCorrect={false}
-            onChangeText={password => this.setState({ password })}
-            autoCapitalize="none"
+          <InputText
+            title="Confirmar E-mail"
+            keyboardType="email-address"
+            placeholder="E-mail"
+            value={email}
+            onChangeText={email => this.setState({ email })}
+            tooltip="Seu endereço de e-mail, válido."
+          />
+          <InputText
+            title="Senha"
             secureTextEntry
-            underlineColorAndroid="transparent"
+            placeholder="Senha"
+            value={password}
+            onChangeText={password => this.setState({ password })}
+            tooltip="Seu senha."
           />
-          {/* campo de seleção de cidade */}
-          <Text style={styles.inputTitle}> Cidade </Text>
-          <ModalDropdown
-            ref={this.dropdownCities}
-            style={styles.pickerStyle}
-            options={cities.map(city => `${city.nome}`)}
-            textStyle={styles.pickerTextStyle}
-            defaultValue="Selecione a cidade"
-            dropdownStyle={styles.pickerDropdownStyle}
-            dropdownTextStyle={styles.pickerDropdownTextStyle}
-            dropdownTextHighlightStyle={styles.pickerDropdownTextHighlightStyle}
-            showsVerticalScrollIndicator={false}
-            onSelect={ (index) => {
-              this.setState({
-                cityId: cities[index].id,
-              });
-            }
-            }
+          <InputText
+            title="Confirmar Senha"
+            secureTextEntry
+            placeholder="Senha"
+            value={password}
+            onChangeText={password => this.setState({ password })}
+            tooltip="Sua senha."
+          />
+          <InputText
+            title="Poló"
+            value={branch}
+            onChangeText={branch => this.setState({ branch })}
+            tooltip="O poló que vocês está inscrito."
+            picker
+          />
+          <InputText
+            title="Curso"
+            value={course}
+            onChangeText={course => this.setState({ course })}
+            tooltip="O curso o qual você está matriculado."
+            picker
           />
           {/* área do link de termos de uso e politica de privacidade */}
           <View style={styles.link}>
@@ -294,18 +294,10 @@ class SignUp extends Component {
             </Text>
           </View>
           {/* botão de cadastro */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={ () => this.signUp() }
-            activeOpacity={0.8}
-            disabled={user.isLoading}
-          >
-            { user.isLoading
-              ? <ActivityIndicator size="small" color="#FFF" />
-              : <Text style={styles.buttonText}> Cadastrar </Text>
-            }
-          </TouchableOpacity>
-
+          <Button
+            title="Cadastrar"
+            onPress={this.signUp}
+          />
         </View>
       </ScrollView>
     );

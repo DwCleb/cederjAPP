@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  ScrollView,
   Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
@@ -17,13 +16,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Creators as UserActions } from 'store/ducks/user';
 import styles from './styles';
-import Tooltip from 'react-native-dw-tooltip';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SubjectList from 'components/SubjectList';
-import { colors, metrics } from 'themes';
 import PageHeader from '../../components/PageHeader';
+import Button from '../../components/Button';
 
 const subjectList = [
+
   {
     title: 'FAC',
     grade: 80,
@@ -119,7 +118,7 @@ class Home extends Component {
 
   render() {
     const {
-      user,
+      navigation,
     } = this.props;
     return (
       <SafeAreaView style={styles.container}>
@@ -130,7 +129,18 @@ class Home extends Component {
           title="Disciplinas"
           label={'Aqui é a lista das disciplinas que você se cadastrou.\nEntenda as cores dos cartões:\nAzul - Falta notas para fechar o semestre.\nLaranha - Você está na AP3.\nVerde - Você está provado.\nVermelho - Você está reprovado.'}
         />
-        <SubjectList data={subjectList} />
+        {subjectList.length < 1
+          ? (
+            <View style={styles.buttonView}>
+              <Button
+                title="Cadastrar disciplina"
+                onPress={() => navigation.navigate('SubjectCreate')}
+              />
+            </View>
+          )
+          : (
+            <SubjectList data={subjectList} />
+          )}
       </SafeAreaView>
     );
   }

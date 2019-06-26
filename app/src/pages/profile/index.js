@@ -8,9 +8,6 @@ import React, { Component } from 'react';
 import {
   ScrollView,
   Platform,
-  TouchableOpacity,
-  Text,
-  ActivityIndicator,
 } from 'react-native';
 import { SafeAreaView, NavigationActions, StackActions } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -20,7 +17,8 @@ import { Creators as UserActions } from 'store/ducks/user';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import PageHeader from 'components/PageHeader';
-import InputText from 'components/InputText'
+import InputText from 'components/InputText';
+import Button from 'components/Button';
 
 class Profile extends Component {
   static navigationOptions = {
@@ -59,7 +57,7 @@ class Profile extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <PageHeader
-          title="Perfil"
+          title="Meu Perfil"
           label="Aqui ficam as suas informações, desde nome até qual poló vocês pertence. Você pode alterar os dados a qualquer momento.
           Lembre-se que determinados dados só serão exibidos de acordo com o seu curso, como as disciplinas para cadastro."
         />
@@ -98,17 +96,10 @@ class Profile extends Component {
             picker
           />
 
-          <TouchableOpacity
-            style={styles.button}
-            onPress={ () => this.signUp() }
-            activeOpacity={0.8}
-            disabled={user.isLoading}
-          >
-            { user.isLoading
-              ? <ActivityIndicator size="small" color="#FFF" />
-              : <Text style={styles.buttonText}> Salvar alterações </Text>
-            }
-          </TouchableOpacity>
+          <Button
+            title="Salvar alterações"
+            onPress={() => {}}
+          />
           <MenuItem onPress={() => this.signOut()} route="" icon="sign-out" title="Sair" />
         </ScrollView>
       </SafeAreaView>

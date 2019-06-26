@@ -35,7 +35,7 @@ src
 │ │ ├── archived-edit.js
 │ │ └── archived-list.js
 │ └─┬ signUp
-│ │ ├── index.js
+│   ├── index.js
 │   └── styles.js
 ├── services
 ├── store

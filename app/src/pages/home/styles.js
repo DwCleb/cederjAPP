@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    alignItems: 'center',
     backgroundColor: colors.white,
   },
 
@@ -57,16 +56,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  balanceText: {
-    fontSize: 20,
-    textAlign: 'center',
+  buttonView: {
+    paddingBottom: metrics.base.padding / 2,
+    paddingHorizontal: metrics.base.padding * 2,
   },
 
-  balanceTitle: {
-    fontSize: 10,
-    textAlign: 'center',
-    marginBottom: 5,
-  },
 });
 
 export default styles;

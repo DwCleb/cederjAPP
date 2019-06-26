@@ -8,18 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  grade: {
-    fontSize: scale(22),
-    fontWeight: 'bold',
-  },
-
-  finalGrade: {
-    fontSize: scale(10),
-  },
-
-  subjectContainer: {
+  notificationContainer: {
     borderBottomColor: colors.darkTransparent,
-    borderLeftWidth: scale(8),
     borderRightColor: colors.transparent,
     borderTopColor: colors.transparent,
     borderWidth: scale(0.25),
@@ -27,10 +17,16 @@ const styles = StyleSheet.create({
     width: metrics.screen.width,
   },
 
-  subjectTitle: {
+  notificationTitle: {
     color: colors.darker,
     fontSize: scale(16),
     fontWeight: 'bold',
+    marginHorizontal: metrics.base.margin,
+  },
+
+  notificationSubtitle: {
+    color: colors.darkerTransparent,
+    fontSize: scale(12),
     marginHorizontal: metrics.base.margin,
   },
 

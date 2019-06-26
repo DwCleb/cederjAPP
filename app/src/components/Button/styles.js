@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { colors, metrics, general } from 'themes';
+
+import { metrics, colors, general } from 'themes';
 
 const styles = StyleSheet.create({
   button: {
@@ -11,17 +12,16 @@ const styles = StyleSheet.create({
     ...general.buttonText,
   },
 
-  container: {
-    backgroundColor: colors.white,
-    flex: 1,
-    justifyContent: 'flex-start',
-  },
-
-  form: {
+  blankButton: {
+    ...general.button,
+    backgroundColor: colors.transparent,
     marginVertical: metrics.base.margin,
-    paddingHorizontal: metrics.base.padding * 2,
   },
 
+  blankText: {
+    ...general.buttonText,
+    color: colors.darkTransparent,
+  },
 });
 
 export default styles;

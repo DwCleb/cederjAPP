@@ -8,12 +8,12 @@ const styles = StyleSheet.create({
   },
 
   inputsStyle: {
-    padding: metrics.base.padding,
+    paddingHorizontal: metrics.base.padding * 2,
   },
 
   button: {
     ...general.button,
-    marginTop: metrics.base.margin,
+    marginTop: metrics.base.margin / 2,
   },
 
   buttonText: {

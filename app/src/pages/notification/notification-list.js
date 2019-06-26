@@ -6,9 +6,8 @@
 
 import React, { Component } from 'react';
 import {
-  Text,
-  View,
   Platform,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -17,6 +16,131 @@ import { Creators as UserActions } from 'store/ducks/user';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PageHeader from 'components/PageHeader';
+import Button from 'components/Button';
+import NotificationList from 'components/NotificationList';
+
+const notificationList = [
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+  {
+    title: 'Estudar FAC',
+    subtitle: 'Aula 03',
+    isRecurrence: false,
+    recurrence: {
+      repeatType: '',
+      repeatHour: '',
+      repeatDay: '',
+    },
+    date: '2019-07-10 19:30',
+    isActivity: true,
+  },
+];
 
 class NotificationCreate extends Component {
   static navigationOptions = {
@@ -28,9 +152,16 @@ class NotificationCreate extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <PageHeader
-          title="Notificações"
-          label={'Programe notificações para te lembrar estudar, de entregas de AD e dias da AP.\nVocê pode configurar as noticações de forma recorrente, diária ou semanal.'}
+          title="Calendário"
+          label={'Programe notificações para te lembrar estudar, de entregar a AD e dias da AP.\nVocê também pode configurar as noticações de forma recorrente: diária ou semanal.'}
         />
+        <View style={styles.buttonView}>
+          <Button
+            title="Cadastrar notificação"
+            onPress={() => { }}
+          />
+        </View>
+        <NotificationList data={notificationList} />
       </SafeAreaView>
     );
   }

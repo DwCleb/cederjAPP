@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
   },
 
+  form: {
+    marginVertical: metrics.base.margin,
+  },
+
   scroll: {
     backgroundColor: colors.white,
   },
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
   inputDDD: {
     ...general.inputDDD,
   },
-  
+
   inputTelephone: {
     ...general.inputTelephone,
   },
@@ -48,12 +52,13 @@ const styles = StyleSheet.create({
 
   link: {
     ...general.link,
+    marginBottom: metrics.base.margin,
   },
-  
+
   linkText: {
     ...general.linkText,
   },
-  
+
   linkTextAccess: {
     ...general.linkTextAccess,
   },
@@ -76,11 +81,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  pickerStyle:{
+  pickerStyle: {
     ...general.pickerStyle,
   },
 
-  pickerTextStyle:{
+  pickerTextStyle: {
     ...general.pickerTextStyle,
   },
 

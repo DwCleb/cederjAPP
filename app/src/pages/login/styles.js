@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { metrics, colors } from 'themes';
+import { metrics, colors, general } from 'themes';
 
 const styles = StyleSheet.create({
   container: {
@@ -43,18 +43,12 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: colors.primary,
-    borderRadius: metrics.base.radius,
-    height: 50,
-    marginTop: metrics.base.margin,
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...general.button,
+    marginTop: metrics.base.margin / 2,
   },
 
   buttonText: {
-    color: colors.white,
-    fontWeight: 'bold',
-    fontSize: 14,
+    ...general.buttonText,
   },
 
   facebookButton: {

@@ -18,7 +18,7 @@ export default {
   },
   
   pickerDropdownStyle: {
-    width: metrics.screen.width * 0.89,
+    width: metrics.screen.width * 0.789,
     borderWidth: 1,
     borderColor: colors.darkTransparent,
   },
