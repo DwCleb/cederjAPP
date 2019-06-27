@@ -81,7 +81,7 @@ InputText.defaultProps = {
   value: '',
   onChangeText: () => { },
   placeholder: '',
-  placeholderTextColor: '#000',
+  placeholderTextColor: 'rgba(0, 0, 0, 0.3)',
   keyboardType: 'default',
   autoCapitalize: 'none',
   autoCorrect: false,

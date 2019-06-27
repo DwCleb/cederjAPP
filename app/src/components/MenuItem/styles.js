@@ -5,9 +5,6 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 5,
-    width: metrics.screen.width / 4,
-    marginLeft: 5,
   },
 
   iconContainer: {

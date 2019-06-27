@@ -1,36 +1,40 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import React from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 import styles from './styles';
+import { colors } from 'themes';
 
-export default class MenuItem extends Component {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func,
-    }).isRequired,
-    title: PropTypes.string.isRequired,
-    route: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+const MenuItem = (props) => {
+  const {
+    title,
+    icon,
+    onPress,
+  } = props;
 
-    onPress: PropTypes.func.isRequired,
-  };
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={() => onPress()} activeOpacity={0.8} style={styles.iconContainer}>
+        <Icon name={(Platform.OS === 'ios') ? `ios-${icon}` : `md-${icon}`} size={25} color={colors.primary} />
+      </TouchableOpacity>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+};
 
-  render() {
-    const {
-      navigation,
-      title,
-      icon,
-      onPress,
-    } = this.props;
+MenuItem.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
 
-    return(
-      <View style={styles.container}>
-        <TouchableOpacity onPress={() => onPress()} activeOpacity={0.8} style={styles.iconContainer}>
-          <Icon name={icon} size={25} color="#F00" />
-        </TouchableOpacity>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-    )
-  }
-}
+  onPress: PropTypes.func.isRequired,
+};
+
+export default MenuItem;

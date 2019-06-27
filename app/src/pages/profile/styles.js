@@ -19,6 +19,15 @@ const styles = StyleSheet.create({
   buttonText: {
     ...general.buttonText,
   },
+
+  footerButton: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: metrics.base.padding / 4,
+    paddingVertical: metrics.base.padding * 2,
+  },
 });
 
 export default styles;

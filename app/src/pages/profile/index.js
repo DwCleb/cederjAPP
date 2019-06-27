@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import {
   ScrollView,
   Platform,
+  View,
 } from 'react-native';
 import { SafeAreaView, NavigationActions, StackActions } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -29,14 +30,24 @@ class Profile extends Component {
   state = {
     name: '',
     email: '',
-    branches: '',
+    branches: [],
+    courses: [],
     course: '',
-    response: '',
+    branch: '',
   };
 
   componentDidMount() {
     this.fetchData();
   }
+
+  fetchData = () => {
+    fetch('https://raw.githubusercontent.com/DwCleb/cederjAPP/master/app/src/services/mock/api.json')
+      .then(res => res.json())
+      .then(json => this.setState({
+        branches: json.branches,
+        courses: json.courses,
+      }));
+  };
 
   signOut = () => {
     const { signOut, navigation } = this.props;
@@ -50,14 +61,9 @@ class Profile extends Component {
     navigation.dispatch(resetAction);
   }
 
-  fetchData = () => {
-    fetch('https://raw.githubusercontent.com/DwCleb/cederjAPP/master/app/src/services/mock/api.json')
-      .then(res => res.json())
-      .then(json => this.setState({
-        branches: json.branches,
-        courses: json.courses,
-      }));
-  };
+  update = () => {
+    console.tron.log(this.state);
+  }
 
   render() {
     const {
@@ -98,23 +104,39 @@ class Profile extends Component {
           <InputText
             title="Poló"
             value={branches}
-            // onChangeText={branches => this.setState({ branches })}
+            onChangeText={branch => this.setState({ branch: branches[branch] })}
             tooltip="O poló que vocês está inscrito."
             picker
           />
           <InputText
             title="Curso"
-            value={courses}
-            // onChangeText={course => this.setState({ course })}
+            value={courses.map(course => course.name)}
+            onChangeText={course => this.setState({ course: courses[course].name })}
             tooltip="O curso o qual você está matriculado."
             picker
           />
 
           <Button
             title="Salvar alterações"
-            onPress={() => {}}
+            onPress={() => this.update()}
           />
-          <MenuItem onPress={() => this.signOut()} route="" icon="sign-out" title="Sair" />
+          <View style={styles.footerButton}>
+            <MenuItem
+              onPress={() => this.signOut()}
+              icon="settings"
+              title="Alterar senha"
+            />
+            <MenuItem
+              onPress={() => this.signOut()}
+              icon="warning"
+              title="Reportar erro"
+            />
+            <MenuItem
+              onPress={() => this.signOut()}
+              icon="log-out"
+              title="Sair"
+            />
+          </View>
         </ScrollView>
       </SafeAreaView>
     );
