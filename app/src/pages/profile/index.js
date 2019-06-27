@@ -29,9 +29,14 @@ class Profile extends Component {
   state = {
     name: '',
     email: '',
-    branch: '',
+    branches: '',
     course: '',
+    response: '',
   };
+
+  componentDidMount() {
+    this.fetchData();
+  }
 
   signOut = () => {
     const { signOut, navigation } = this.props;
@@ -45,12 +50,21 @@ class Profile extends Component {
     navigation.dispatch(resetAction);
   }
 
+  fetchData = () => {
+    fetch('https://raw.githubusercontent.com/DwCleb/cederjAPP/master/app/src/services/mock/api.json')
+      .then(res => res.json())
+      .then(json => this.setState({
+        branches: json.branches,
+        courses: json.courses,
+      }));
+  };
+
   render() {
     const {
       name,
       email,
-      branch,
-      course,
+      branches,
+      courses,
     } = this.state;
     const { user } = this.props;
 
@@ -83,15 +97,15 @@ class Profile extends Component {
           />
           <InputText
             title="Poló"
-            value={branch}
-            onChangeText={branch => this.setState({ branch })}
+            value={branches}
+            // onChangeText={branches => this.setState({ branches })}
             tooltip="O poló que vocês está inscrito."
             picker
           />
           <InputText
             title="Curso"
-            value={course}
-            onChangeText={course => this.setState({ course })}
+            value={courses}
+            // onChangeText={course => this.setState({ course })}
             tooltip="O curso o qual você está matriculado."
             picker
           />

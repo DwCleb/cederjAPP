@@ -33,35 +33,35 @@
     "Três Rios",
     "Volta Redonda"
   ],
-  "courses": {
-    "Administração": {
+  "courses": [
+    { "name": "Administração",
       "subjects": []
     },
-    "Administração Pública": {
+    { "name": "Administração Pública",
       "subjects": []
     },
-    "Engenharia de Produção": {
+    { "name": "Engenharia de Produção",
       "subjects": []
     },
-    "Licenciatura em Ciências Biológicas": {
+    { "name": "Licenciatura em Ciências Biológicas",
       "subjects": []
     },
-    "Licenciatura em Física": {
+    { "name": "Licenciatura em Física",
       "subjects": []
     },
-    "Licenciatura em Geografia": {
+    { "name": "Licenciatura em Geografia",
       "subjects": []
     },
-    "Licenciatura em História": {
+    { "name": "Licenciatura em História",
       "subjects": []
     },
-    "Licenciatura em Letras (Português/Literatura)": {
+    { "name": "Licenciatura em Letras (Português/Literatura)",
       "subjects": []
     },
-    "Licenciatura em Matemática": {
+    { "name": "Licenciatura em Matemática",
       "subjects": []
     },
-    "Licenciatura em Pedagogia": {
+    { "name": "Licenciatura em Pedagogia",
       "subjects": [
         "Filosofia e Educação",
         "Psicologia e Educação",
@@ -132,13 +132,13 @@
         "Avaliação do Livro Didático"
       ]
     },
-    "Licenciatura em Química": {
+    { "name": "Licenciatura em Química",
       "subjects": []
     },
-    "Licenciatura em Turismo": {
+    { "name": "Licenciatura em Turismo",
       "subjects": []
     },
-    "Tecnologia em Sistemas de Computação": {
+    { "name": "Tecnologia em Sistemas de Computação",
       "subjects": [
         "Introdução à Informática",
         "Construção de Página Web",
@@ -168,11 +168,11 @@
         "Trabalho de Conclusão de Curso"
       ]
     },
-    "Tecnologia em Segurança Pública": {
+    { "name": "Tecnologia em Segurança Pública",
       "subjects": []
     },
-    "Tecnologia em Gestão de Turismo": {
+    { "name": "Tecnologia em Gestão de Turismo",
       "subjects": []
     }
-  }
+  ]
 }

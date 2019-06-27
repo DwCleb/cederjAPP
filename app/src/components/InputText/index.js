@@ -45,7 +45,7 @@ const InputText = (props) => {
         ? (
           <ModalDropdown
             style={styles.pickerStyle}
-            options={option.length > 0 && option.map(item => `${item.name}`)}
+            options={value.length > 0 && value}
             textStyle={styles.pickerTextStyle}
             defaultValue={placeholder}
             dropdownStyle={styles.pickerDropdownStyle}
