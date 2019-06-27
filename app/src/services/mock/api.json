@@ -1,0 +1,178 @@
+{
+  "branches": [
+    "Angra dos Reis",
+    "Barra do Piraí",
+    "Belford Roxo",
+    "Bom Jesus do Itabapoana",
+    "Campo Grande",
+    "Canta Galo",
+    "Duque de Caxias",
+    "Itaguaí",
+    "Itaocara",
+    "Itaperuna",
+    "Macaé",
+    "Magé",
+    "Miguel Pereira",
+    "Miracema",
+    "Natividade",
+    "Niterói",
+    "Nova Friburgo",
+    "Nova Iguaçu",
+    "Paracambi",
+    "Petrópolis",
+    "Piraí",
+    "Resende",
+    "Rio Bonito",
+    "Rio das Flores",
+    "Rocinha",
+    "Santa Maria Madalena",
+    "São Fidélis",
+    "São Francisco de Itabapoana",
+    "São Pedro da Aldeia",
+    "Saquarema",
+    "Três Rios",
+    "Volta Redonda"
+  ],
+  "courses": {
+    "Administração": {
+      "subjects": []
+    },
+    "Administração Pública": {
+      "subjects": []
+    },
+    "Engenharia de Produção": {
+      "subjects": []
+    },
+    "Licenciatura em Ciências Biológicas": {
+      "subjects": []
+    },
+    "Licenciatura em Física": {
+      "subjects": []
+    },
+    "Licenciatura em Geografia": {
+      "subjects": []
+    },
+    "Licenciatura em História": {
+      "subjects": []
+    },
+    "Licenciatura em Letras (Português/Literatura)": {
+      "subjects": []
+    },
+    "Licenciatura em Matemática": {
+      "subjects": []
+    },
+    "Licenciatura em Pedagogia": {
+      "subjects": [
+        "Filosofia e Educação",
+        "Psicologia e Educação",
+        "Informática Instrumental",
+        "Português Instrumental",
+        "Educação Especial",
+        "Educação a Distância",
+        "História da Educação",
+        "Educação e Trabalho",
+        "Didática",
+        "Educação Infantil 1",
+        "Sociologia e Educação",
+        "Políticas Públicas em Educação",
+        "Seminário de Práticas Educativas 1",
+        "Artes Visuais e Educação",
+        "Informática em Educação",
+        "Matemática na Educação 1",
+        "Língua Portuguesa na Educação 1",
+        "Educação Infantil 2",
+        "Gestão 1",
+        "Seminário de Práticas Educativas 2",
+        "Música e Educação",
+        "Educação de Jovens e Adultos",
+        "Matemática na Educação 2",
+        "Educação 1",
+        "Língua Portuguesa na Educação 2",
+        "Teatro e Educação",
+        "Gestão 2",
+        "Seminário de Práticas Educativas 3",
+        "Currículo",
+        "Geografia na Educação 1",
+        "Ciências Naturais na Educação 1",
+        "História na Educação 1",
+        "Alfabetização ",
+        "Literatura na Formação do Leito",
+        "Estágio Curricular Supervisionado 2",
+        "Seminário de Práticas Educativas 4",
+        "Metodologia da Pesquisa em Educação",
+        "Geografia na Educação 2",
+        "Ciências Naturais na Educação 2",
+        "História na Educação 2",
+        "Alfabetização 2",
+        "Imagem e Educação",
+        "Dinâmica e Organização Escolar",
+        "Estágio Curricular Supervisionado 3",
+        "Seminário de Práticas Educacionais 5",
+        "Corpo e Movimento",
+        "Avaliação e Educação",
+        "Práticas Educativas em Contextos não Escolares",
+        "Trabalho de Conclusão de Curso - TCC 1",
+        "Estágio Curricular Supervisionado 4",
+        "Seminário de Práticas Educativas 5",
+        "Trabalho de Conclusão de Curso - TCC 2 ",
+        "Lingua Brasileira de Sinais",
+        "Estágio Curricular Supervisionado 5",
+        "Seminário de Práticas Educativas 7",
+        "Tópicos de Educação Especial",
+        "Movimentos Sociais e Educação",
+        "Paulo Freire: Pensamento e Obra",
+        "Adolescência e Juventude",
+        "Psicopedagogia",
+        "Movimentos Instituintes e Educação: Memória e Narrativas de Professores",
+        "Teatro, Educação e Saúde",
+        "Tendências Contemporâneas do Ensino das Artes",
+        "Educação e Conservação da Natureza",
+        "Educação para a Diversidade",
+        "Tempo Ampliado e Educação Integral no Ensino Fundamental",
+        "Avaliação do Livro Didático"
+      ]
+    },
+    "Licenciatura em Química": {
+      "subjects": []
+    },
+    "Licenciatura em Turismo": {
+      "subjects": []
+    },
+    "Tecnologia em Sistemas de Computação": {
+      "subjects": [
+        "Introdução à Informática",
+        "Construção de Página Web",
+        "Inglês Instrumental",
+        "Projeto e Desenvolvimento de Algoritmos",
+        "Álgebra Linear",
+        "Fundamentos de Algoritmos para Computação",
+        "Organização de Computadores",
+        "Fundamentos de Programação",
+        "Estrutura de Dados",
+        "Matemática para Computação",
+        "Física para Computação",
+        "Programação com Interfaces Gráficas",
+        "Banco de Dados",
+        "Modelagem de Informação",
+        "Probabilidade e Estatística",
+        "Sistemas Operacionais",
+        "Programação Orientada a Objetos",
+        "Análise de Sistemas",
+        "Engenharia de Software",
+        "Redes de Computadores I",
+        "Programação de Aplicações Web",
+        "Arquitetura e Projeto de Sistemas",
+        "Computação Gráfica",
+        "Empreendedorismo e Ética Profissional",
+        "Redes de Computadores II",
+        "Trabalho de Conclusão de Curso"
+      ]
+    },
+    "Tecnologia em Segurança Pública": {
+      "subjects": []
+    },
+    "Tecnologia em Gestão de Turismo": {
+      "subjects": []
+    }
+  }
+}
